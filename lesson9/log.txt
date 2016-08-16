@@ -1,0 +1,21 @@
+   [delete] Deleting directory C:\Users\svilambi\Desktop\Ant\lesson9\build
+   [delete] Deleting directory C:\Users\svilambi\Desktop\Ant\lesson9\dist
+   [delete] Deleting directory C:\Users\svilambi\Desktop\Ant\lesson9\properties
+
+init:
+    [mkdir] Created dir: C:\Users\svilambi\Desktop\Ant\lesson9\build
+    [mkdir] Created dir: C:\Users\svilambi\Desktop\Ant\lesson9\properties
+
+update_build_info:
+[propertyfile] Creating new property file: C:\Users\svilambi\Desktop\Ant\lesson9\properties\build-info.properties
+
+compile:
+    [javac] Compiling 5 source files to C:\Users\svilambi\Desktop\Ant\lesson9\build
+
+copy_files:
+     [copy] Copying 1 file to C:\Users\svilambi\Desktop\Ant\lesson9\build
+
+dist:
+    [mkdir] Created dir: C:\Users\svilambi\Desktop\Ant\lesson9\dist\lib
+      [jar] Building jar: C:\Users\svilambi\Desktop\Ant\lesson9\dist\lib\MyProject-20150507.jar
+      [zip] Building zip: C:\Users\svilambi\Desktop\Ant\lesson9\dist\manual.zip

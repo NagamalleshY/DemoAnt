@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="java" default="copy">
+
+
+	
+	<target name="ano1">
+		<propertyfile file="my.properties" comment="My properties">
+  
+			<entry  key="anint" type="int" default="0" operation="+"/>
+			
+			
+  
+		</propertyfile>
+		<echo> ${anint} </echo>
+	</target>
+	
+	<target name="copy" depends="ano">
+		<loadfile property="data" srcFile="login.txt"/>
+		<echo file="logout.txt" append="true"> 
+			  the file contains ${data} </echo>
+			 
+	</target>
+	
+	
+	<target name="ano" depends="ano1">
+	<property file="my.properties"/>
+	<echo file="logout.txt" append="true"> 
+			 ${anint} </echo>
+	</target>
+	
+	
+	
+</project>

@@ -1,0 +1,21 @@
+
+clean:
+
+copy:
+     [echo] hi i am in build file
+     [exec] Use of comma-less variable list is deprecated at 16abc.pl line 4.
+     [exec] ===================================
+     [exec] Name                    Age Page 1
+     [exec] ===================================
+     [exec] ===================================
+     [exec] Ali                     20
+     [exec]   2000.00
+     [exec] ===================================
+     [exec] ===================================
+     [exec] Raza                    30
+     [exec]   2500.00
+     [exec] ===================================
+     [exec] ===================================
+     [exec] Jaffer                  40
+     [exec]   4000.00
+     [exec] ===================================

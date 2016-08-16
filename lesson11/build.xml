@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="java" default="copy">
+	<record name="log.txt" action="start"/>
+	<import file="build1.xml"/>
+	<target name="copy" depends="copy1,clean">
+		<echo>hi i am in build file</echo>
+			
+			<mkdir dir="E:\Create1"/>
+			<copy todir="E:\Create1">
+				<fileset dir="D:\create">
+					<exclude name="CS 2.0.3_CurlCmdForDocs.txt">
+					</exclude>
+				</fileset>
+			</copy>
+		<record name="log.txt" action="stop"/>
+	</target>
+	<target name="clean">
+	<delete dir="E:\Create1"/>
+	</target>
+</project>

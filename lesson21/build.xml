@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<project name="mapper demo" default="replace" basedir=".">
+  <target name="replace">
+    <!-- <loadfile property="result" srcfile="demo.txt">
+     <filterchain>
+       <linecontainsregexp>
+         <regexp pattern="commit "/>
+       </linecontainsregexp>
+     </filterchain>
+   </loadfile>
+   <echo message="${result}"/> -->
+   
+   <loadfile srcfile="demo.txt" property="result">
+        <filterchain>
+           <headfilter lines="1" skip="0"/>
+           <tokenfilter>
+              <replaceregex pattern="commit " replace="" flags="gi"/>
+           </tokenfilter>
+           <striplinebreaks/>
+        </filterchain>
+    </loadfile>
+	
+	<echo message="${result}"/>
+  </target>
+</project>

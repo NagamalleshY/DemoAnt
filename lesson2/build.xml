@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<project name="Hello World Project" default="info">
+
+   <property file="external.properties"/>
+   
+   <target name="info">
+		<echo>Base Dir are at : ${basedir} </echo>
+      <echo>Amphora version is ${buildversion} - You are at ${sitename} </echo>
+   </target>
+   
+   
+   
+</project>

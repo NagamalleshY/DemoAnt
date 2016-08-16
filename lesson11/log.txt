@@ -1,0 +1,11 @@
+
+copy1:
+     [echo] hi i am in build1 file
+
+clean:
+   [delete] Deleting directory E:\Create1
+
+copy:
+     [echo] hi i am in build file
+    [mkdir] Created dir: E:\Create1
+     [copy] Copying 2 files to E:\Create1

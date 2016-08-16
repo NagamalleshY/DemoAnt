@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="java" default="copy">
+<target name="copy" depends="">
+<record name="log.txt" action="start"/>
+<copy todir="E:\Create1">
+<fileset dir="D:\create">
+<exclude name="CS 2.0.3_CurlCmdForDocs.txt">
+</exclude>
+</fileset>
+</copy>
+<record name="log.txt" action="stop"/>
+</target>
+</project>

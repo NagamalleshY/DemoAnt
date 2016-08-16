@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="java" default="copy">
+	<record name="log.txt" action="start"/>
+	<target name="copy" depends="clean">
+		<echo>hi i am in build file</echo>
+			
+			<exec executable="perl" dir="${basedir}">
+			<arg value="16abc.pl"/>
+            <arg value="-major"/>
+			</exec>
+			
+		<record name="log.txt" action="stop"/>
+	</target>
+	<target name="clean">
+	<delete dir="E:\Create1"/>
+	</target>
+	
+</project>

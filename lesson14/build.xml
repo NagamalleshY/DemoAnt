@@ -1,0 +1,15 @@
+<project name="mail" default="mail">
+<target name="mail">
+<record name="log.txt" action="start"/>
+
+<mail enableStartTLS="true" ssl="yes" mailhost="smtp.gmail.com" mailport="587" user="sun7555@gmail.com" password="123456789" subject="Test build">
+<from address="sun7555@gmail.com"/>
+<replyto address="svilambi@amphorainc.com"/>
+<to address="nyenuganti@amphorainc.com"/>
+<message>These a sample test build has completed</message>
+</mail>
+
+<record name="log.txt" action="stop"/>
+</target>
+</project>
+

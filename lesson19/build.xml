@@ -1,0 +1,17 @@
+<project default="run">
+<target name="run">
+
+<tstamp>
+<format property="now" pattern="MMMM d YYYY hh:mm aa"/>
+</tstamp>
+		<copy todir="src1" filtering="true">
+			<fileset dir="src">
+				<include name="**/*.java"/>
+			</fileset>
+			<filterset begintoken="%" endtoken="!">
+				<filter token="BUILD_DATE" value="${now}"/>
+				<filter token="COPYRIGHT" value="Copyright to Sunil"/>
+			</filterset>
+		</copy>
+</target>
+</project>

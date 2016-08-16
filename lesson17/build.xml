@@ -1,0 +1,95 @@
+<project name="MyProject" default="obfuscate" basedir=".">
+    <description>
+        simple example build file
+    </description>
+  <!-- set global properties for this build -->
+  
+  <property file="locations.properties"/>
+  
+  <target name="init" depends="clean">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+	<mkdir dir="${prop}"/>
+  </target>
+
+  <target name="compile" depends="init,update_build_info"
+        description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${java_files}" destdir="${build}" includeantruntime="false">
+			<include name="**/*.java"/>
+	</javac>
+  </target>
+  
+  <target name="update_build_info">
+		<propertyfile comment="Build Information" file="${prop}/build-info.properties">
+					  
+		    <entry key="build.date"
+		           type="date"
+		           pattern="EEEE MMM dd, yyyy"
+		           value="now"/>
+		    <entry key="build.time"
+		           type="date"
+		           pattern="kk 'hrs' ,mm 'mins', ss 'secs'"
+		           value="now"/>
+		    <entry key="build.timestamp"
+		           type="date"
+		           pattern="yyyy-MM-dd  HH 'hrs', mm 'mins', ss 'secs'"
+		           value="now"/>
+		    <entry key="build.user.name" value="Sunil"/>
+		    <entry key="build.computer" value="Amphora"/>
+			
+			<entry key="classes_folder" value="${build}"/>
+			<entry key="jar_folder" value="${dist}/lib"/>
+			
+	 	  </propertyfile>
+	   </target>
+	   
+	<target name="copy_files" >
+		
+		<copy todir="${build}">
+		   <fileset dir="${prop}">
+            <include name="**/*.properties"/>
+	      </fileset>
+		</copy>
+	
+	</target>
+
+	
+  <target name="dist" depends="compile,copy_files"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}/lib"/>
+
+    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist}/lib/MyProject.jar" basedir="${build}"/>
+  </target>
+  
+  <target name="obfuscate" depends="dist">
+  <echo> in proguard </echo>
+		<proguard>
+			-injars       ${dist}/lib/MyProject.jar
+			-outjars      myapplication_out.jar
+			
+
+			-keep public class mypackage.MyMain {
+				public static void main(java.lang.String[]);
+			}
+		</proguard>
+	<delete>
+		<fileset dir="${dist}/lib/">
+			<include name="MyProject.jar"/>
+		</fileset>
+	</delete>
+  
+  </target>
+
+  <target name="clean" 
+        description="clean up">
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+	<delete dir="${prop}"/>
+  </target>
+</project>

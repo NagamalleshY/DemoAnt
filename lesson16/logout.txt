@@ -1,0 +1,11 @@
+ 
+			 1  
+			  the file contains 
+clean:
+   [delete] Deleting directory E:\Create1
+
+copy:
+     [echo] hi i am in build file
+     [exec] Can't open perl script "16abc.pl": No such file or directory
+     [exec] Result: 2
+ 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="java1" default="copy">
+<target name="copy1" depends="">
+<echo>hi i am in build1 file</echo>
+</target>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="java" default="ano">
+	
+	<target name="copy" >
+		
+		<loadfile property="data" srcFile="log.txt"/>
+		<echo> the file contains ${data} </echo>
+	
+	
+	</target>
+	<target name="ano" depends="copy">
+	<echo file="myoutput.txt" append="true">
+	
+   ${data}
+   The content to be written to myoutput.txt, the classpath is ${basedir}
+   
+   
+</echo>
+	
+	</target>
+</project>

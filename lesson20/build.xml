@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<project name="mapper demo" default="backupFiles" basedir=".">
+<!-- define a mapper for backing up files -->
+	<mapper id="backupMapper" type="glob" from="*.java" to="*.java.bak"/>
+	<target name="clean">
+		<delete dir="bak"/>
+	</target>
+	<target name="prepare">
+		<mkdir dir="bak"/>
+	</target>
+	<target name="backupFiles" depends="prepare">
+		<echo>**********************************
+making backup files in bak folder with .java.bak files
+*********************************</echo>
+		<copy todir="bak">
+			<!-- select the files to copy with a fileset -->
+			<mapper refid="backupMapper"/>
+			<fileset dir="src" includes="**/*.java"/>			
+		</copy>
+	</target>
+</project>
