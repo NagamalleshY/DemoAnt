@@ -1,3 +1,4 @@
+FROM scratch
 MAINTAINER Sunil Kumar
 
 RUN mkdir -p /ant/lesson4
