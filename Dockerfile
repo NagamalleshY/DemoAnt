@@ -1,5 +1,8 @@
-FROM scratch
+FROM frekele/java:jdk8
 MAINTAINER Sunil Kumar
+
+ENV ANT_VERSION=1.9.9
+ENV ANT_HOME=/opt/ant
 
 RUN mkdir -p /ant/lesson4
 
