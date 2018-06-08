@@ -2,7 +2,7 @@
     <description>
         simple example build file
     </description>
-  <!-- set global properties for this build -->
+  <!-- set global properties for this build test-->
   
   <property file="locations.properties"/>
   
